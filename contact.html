@@ -1,58 +1,102 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Joshua D. Intagliata</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="sticky-header">
-        <nav class="container">
-            <a href="index.html" class="logo">Joshua D. Intagliata</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Joshua D. Intagliata</a>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resume.html" class="nav-link">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link active">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="page-content contact-page">
+    <!-- Main Content -->
+    <main class="main">
+        <section class="contact-section">
             <div class="container">
-                <h1 class="page-title">Get in Touch</h1>
-                <p class="contact-intro">I'm always open to discussing new opportunities, collaborations, or just to chat. Feel free to reach out!</p>
-                
-                <div class="contact-details">
-                    <p><strong>Email:</strong> <a href="mailto:JDIntagliata@gmail.com" class="contact-link">JDIntagliata@gmail.com</a></p>
-                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" class="contact-link">linkedin.com/in/josh-intagliata-product-expert</a></p>
-                    <p><strong>GitHub:</strong> <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" class="contact-link">intagonizer.github.io/Joshua-Intagliata</a></p>
-                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h1 class="page-title">Get in Touch</h1>
+                        <p class="contact-intro">
+                            I'm always open to discussing new opportunities, collaborations, or just to chat. Feel free to reach out!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <h3>Email</h3>
+                                <a href="mailto:JDIntagliata@gmail.com" class="contact-link">JDIntagliata@gmail.com</a>
+                            </div>
+                            <div class="contact-method">
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" class="contact-link">josh-intagliata-product-expert</a>
+                            </div>
+                            <div class="contact-method">
+                                <h3>GitHub</h3>
+                                <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" class="contact-link">Joshua-Intagliata</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <h3>Send a Message</h3>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
                 </div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; <span id="currentYear"></span> Joshua D. Intagliata. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank">LinkedIn</a>
-                <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank">GitHub</a>
+            <div class="footer-content">
+                <p class="footer-text">© 2025 Joshua D. Intagliata. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" class="footer-link">GitHub</a>
+                </div>
             </div>
         </div>
     </footer>
