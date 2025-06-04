@@ -4,127 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Joshua D. Intagliata</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Joshua D. Intagliata</a>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="./index.html" class="nav-logo">Joshua D. Intagliata</a>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./resume.html" class="nav-link active">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <div class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </div>
-                <div class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </div>
-                <div class="nav-item">
-                    <a href="resume.html" class="nav-link active">Resume</a>
-                </div>
-                <div class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
-            </div>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Resume Section -->
-    <section class="resume-page">
-        <div class="container">
-            <div class="page-header">
-                <h1>Resume</h1>
-                <p>A comprehensive overview of my professional experience and qualifications.</p>
-                <a href="assets/Intagliata.Joshua.Resume.pdf" class="btn btn-primary download-btn" target="_blank">
-                    <span>📄</span> Download PDF Resume
-                </a>
-            </div>
-            
-            <div class="resume-content">
-                <div class="resume-section">
-                    <h2>Experience</h2>
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <h3>Product Marketing Manager, North American Portfolio</h3>
-                            <div class="job-details">
-                                <span class="company">CM.com</span>
-                                <span class="location">Breda, Netherlands</span>
-                                <span class="date">September 2022 - Current</span>
+    <!-- Main Content -->
+    <main class="main">
+        <section class="resume-section">
+            <div class="container">
+                <div class="resume-header">
+                    <h1 class="page-title">Resume</h1>
+                    <p class="resume-intro">A comprehensive overview of my professional experience and qualifications.</p>
+                    <a href="./assets/Intagliata.Joshua.Resume.pdf" download class="btn btn-primary download-btn">Download PDF Resume</a>
+                </div>
+
+                <div class="resume-content">
+                    <!-- Experience Section -->
+                    <section class="resume-section-block">
+                        <h2 class="section-title">Experience</h2>
+                        
+                        <div class="job">
+                            <div class="job-header">
+                                <h3 class="job-title">Product Marketing Manager, North American Portfolio</h3>
+                                <div class="job-meta">
+                                    <span class="company">CM.com</span>
+                                    <span class="location">Breda, Netherlands</span>
+                                    <span class="dates">September 2022 - Current</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Strategically formulated and executed comprehensive Go-To-Market Strategies (identifying the ideal customer profile (ICP) per product, defining target markets and segmenting them, performing data analysis, market research, and competitive analysis) for an extensive North America product portfolio including Customer Service Software, Marketing Automation, and Advanced AI Technologies (Scripted & Generative AI Chatbots, Customer Data Platforms).</li>
-                                <li>Focused on identifying (using ZoomInfo) and penetrating key target accounts using an Account Based Marketing (ABM) strategy within the retail and hospitality sectors ranging from Mid-Market to Enterprise.</li>
-                                <li>Led the development and implementation of integrated marketing campaigns (~30+), leveraging tailored outreach emails (~100+) within Outreach, persuasive call scripts (~40+), and (~20+) compelling marketing materials (using Adobe Illustrator and InDesign) such as white papers and infographics (leveraging data from Statista and other sources).</li>
+                            <ul class="job-responsibilities">
+                                <li>Strategically formulated and executed comprehensive Go-To-Market Strategies (identifying the ideal customer profile(ICP) per product, defining target markets and segmenting them, performing data analysis, market research, and competitive analysis) for an extensive North America product portfolio including Customer Service Software, Marketing Automation, and Advanced AI Technologies (Scripted & Generative AI Chatbots, Customer Data Platforms).</li>
+                                <li>Focused on identifying (using ZoomInfo) and penetrating key target accounts using an Account Based Marketing(ABM) strategy within the retail and hospitality sectors ranging from Mid-Market to Enterprise.</li>
+                                <li>Led the development and implementation of integrated marketing campaigns(~30+), leveraging tailored outreach emails(~100+) within Outreach, persuasive call scripts(~40+), and (~20+) compelling marketing materials (using Adobe Illustrator and InDesign) such as white papers and infographics(leveraging data from Statista and other sources).</li>
                                 <li>This approach significantly enhanced customer engagement and market penetration (~$15M in pipeline added), driving measurable increases in lead generation (from ~50 to ~100 leads a week) and customer acquisition (~$5M closed won).</li>
                                 <li>Created and facilitated virtual and in-person sales training to showcase the end-to-end user experience of CM's North American product portfolio for targeted verticals, highlighting product features, industry-specific use cases, and buyer personas with a focus on customer acquisition, engagement, and retention.</li>
-                                <li>Leveraged cross-functional teams made up of Sales, Marketing, Customer Success, Product Marketing, Engineering and Technical Consulting to influence product feature enhancements that improved carrier relationships with mobile operators (including Vibes, Bandwidth, Infobip, Sinch, Meta, Google, and Apple) by growing traffic volumes, improving data entry quality and increasing communication between parties.</li>
+                                <li>Leveraged cross-functional teams made up of Sales, Marketing, Customer Success, Product Marketing, Engineering and Technical Consulting to influence product feature enhancements that improved carrier relationships with mobile operators (including Vibes, Bandwidth, Infobip, Sinch, Meta, Google, and Apple) by growing traffic volumes, improving data entry quality and increasing communication between parties, guaranteeing efficient and beneficial collaboration.</li>
+                                <li>Elevated CM's standing as a prominent figure in the messaging domain by planning and hosting monthly webinars, and annual trade shows( Enterprise Connect, Channel Partners, and Retail Innovation Conference & Expo ).</li>
+                                <li>Partnered with diverse teams to devise data-backed project blueprints.</li>
+                                <li>Additionally, maintained platform compliance and production timelines, enhancing the efficiency of the sales/marketing process.</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
 
-                <div class="resume-section">
-                    <h2>Skills</h2>
-                    <div class="skills-list">
-                        <div class="skill-category">
-                            <h4>Marketing</h4>
-                            <ul>
-                                <li>Product Marketing</li>
-                                <li>Go-To-Market Strategy</li>
-                                <li>Account Based Marketing (ABM)</li>
-                                <li>Campaign Development</li>
-                                <li>Market Research</li>
+                        <div class="job">
+                            <div class="job-header">
+                                <h3 class="job-title">Product Manager, North American Portfolio</h3>
+                                <div class="job-meta">
+                                    <span class="company">CM.com</span>
+                                    <span class="location">Breda, Netherlands</span>
+                                    <span class="dates">July 2021 - September 2022</span>
+                                </div>
+                            </div>
+                            <ul class="job-responsibilities">
+                                <li>Evaluated the competitive landscape to introduce new features and products for the North American product portfolio.</li>
+                                <li>Influenced executive commitment of resources to test the hypothesis, build out functionality, and validate assumptions in monthly win/loss analysis.</li>
+                                <li>Collaborated with stakeholders from Sales, Marketing, and Product to create a product marketing roadmap, Go-To-Market strategy, SWOT analysis, buyer personas, ideal customer profiles, battle cards, requirements, wireframes, user stories, and value propositions.</li>
+                                <li>Designed an automated campaign registry tool (using Balsamiq) for customers to submit 10-DLC campaigns for approval within CM's environment.</li>
                             </ul>
                         </div>
-                        <div class="skill-category">
-                            <h4>Technical</h4>
-                            <ul>
-                                <li>Data Analysis</li>
-                                <li>Adobe Creative Suite</li>
-                                <li>ZoomInfo</li>
-                                <li>Outreach</li>
-                                <li>AI Technologies</li>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h3 class="job-title">Sales Development Manager, North America</h3>
+                                <div class="job-meta">
+                                    <span class="company">CM.com</span>
+                                    <span class="location">Breda, Netherlands</span>
+                                    <span class="dates">December 2020 - July 2021</span>
+                                </div>
+                            </div>
+                            <ul class="job-responsibilities">
+                                <li>Created and implemented sales strategies and processes for sales teams, determined KPIs, and selected sales tools to implement.</li>
+                                <li>Developed sales scripts, presentations, and training materials for Sales Development Representatives to use when prospecting.</li>
+                                <li>Exceeded personal sales quota by 150% quarter over quarter, while coaching a team to attain an average quota of 90%.</li>
                             </ul>
                         </div>
-                        <div class="skill-category">
-                            <h4>Business</h4>
-                            <ul>
-                                <li>Cross-functional Leadership</li>
-                                <li>Sales Training</li>
-                                <li>Customer Profiling</li>
-                                <li>Competitive Analysis</li>
-                                <li>ROI Optimization</li>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h3 class="job-title">Enterprise Sales Development Representative</h3>
+                                <div class="job-meta">
+                                    <span class="company">CHEETAH DIGITAL</span>
+                                    <span class="location">Chicago, IL</span>
+                                    <span class="dates">September 2019 - November 2020</span>
+                                </div>
+                            </div>
+                            <ul class="job-responsibilities">
+                                <li>Developed relationships with executives at enterprise companies to spread brand awareness, discover marketing challenges, and advise solutions that grew directly to consumer revenue streams.</li>
+                                <li>Consistently hitting sales metrics for the number of meetings held, action items executed per day, deals progressed through stages per month and ACV of $250K per month added to the pipeline.</li>
                             </ul>
                         </div>
-                    </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <h3 class="job-title">Sales and Product Strategist</h3>
+                                <div class="job-meta">
+                                    <span class="company">DOM & TOM</span>
+                                    <span class="location">Chicago, IL</span>
+                                    <span class="dates">October 2017 - August 2019</span>
+                                </div>
+                            </div>
+                            <ul class="job-responsibilities">
+                                <li>Collaborated to pitch, build, and implement a product to combine legacy technologies that streamline materials management systems for aeronautical repair cycle, streamlining workflows to save over $150,000 a year in downtime.</li>
+                                <li>Led a team to pitch, build, and implement a mobile communication platform directed towards teens and mentors, complying with COPPA requirements, increasing daily engagement by 150%, and reducing annual costs by 80%.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Education Section -->
+                    <section class="resume-section-block">
+                        <h2 class="section-title">Education & Certifications</h2>
+                        <div class="education-grid">
+                            <div class="education-item">
+                                <h3>Bachelor of Science in Business Administration</h3>
+                                <p class="institution">Youngstown State University</p>
+                                <p class="year">2013</p>
+                            </div>
+                            <div class="education-item">
+                                <h3>Minor in Entrepreneurship</h3>
+                                <p class="institution">Youngstown State University</p>
+                                <p class="year">2013</p>
+                            </div>
+                            <div class="education-item">
+                                <h3>Product Management Certification</h3>
+                                <p class="institution">General Assembly</p>
+                                <p class="year">2020</p>
+                            </div>
+                            <div class="education-item">
+                                <h3>Scrum Master Certification</h3>
+                                <p class="institution">Scrum.org</p>
+                                <p class="year">2022</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Skills Section -->
+                    <section class="resume-section-block">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skills-content">
+                            <div class="skill-category">
+                                <h3>Core Competencies</h3>
+                                <p>Product Marketing, Digital Marketing, Go-To-Market Strategy, Target Market Segmentation, Data Analysis, Market Research, OKR / KPI Tracking, Brand Strategy, Competitive Analysis, Project Management, Scrum Framework, Agile Methodology, Technical Writing, Epics, User Stories, Kanban, Value Propositions, and Identifying Customer Profiles.</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Tools</h3>
+                                <p>Balsamiq, Statista, Salesforce, Adobe Suite, Microsoft Office, Monday, Asana, Outreach, ZoomInfo, CRMs, and CDPs.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section class="resume-section-block">
+                        <h2 class="section-title">Key Projects</h2>
+                        <div class="project">
+                            <h3>Automated Campaign Registry Tool (CM.com)</h3>
+                            <p>Designed an automated campaign registry tool (using Balsamiq) for customers to submit 10-DLC campaigns for approval within CM's environment.</p>
+                        </div>
+                        <div class="project">
+                            <h3>Aeronautical Repair Cycle Product (DOM & TOM)</h3>
+                            <p>Collaborated to pitch, build, and implement a product to combine legacy technologies that streamline materials management systems for aeronautical repair cycle, saving over $150,000 a year in downtime.</p>
+                        </div>
+                        <div class="project">
+                            <h3>Mobile Communication Platform (DOM & TOM)</h3>
+                            <p>Led a team to pitch, build, and implement a mobile communication platform directed towards teens and mentors, complying with COPPA requirements, increasing daily engagement by 150%, and reducing annual costs by 80%.</p>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Joshua D. Intagliata. All rights reserved.</p>
+                <p class="footer-text">© 2025 Joshua D. Intagliata. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Intagonizer/Joshua.Intagliata.github.io" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

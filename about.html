@@ -4,96 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Joshua D. Intagliata</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Joshua D. Intagliata</a>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="./index.html" class="nav-logo">Joshua D. Intagliata</a>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./about.html" class="nav-link active">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./resume.html" class="nav-link">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <div class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </div>
-                <div class="nav-item">
-                    <a href="about.html" class="nav-link active">About</a>
-                </div>
-                <div class="nav-item">
-                    <a href="resume.html" class="nav-link">Resume</a>
-                </div>
-                <div class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
-            </div>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- About Section -->
-    <section class="about-page">
-        <div class="container">
-            <div class="page-header">
-                <h1>About Me</h1>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="about-section">
-                        <h2>Professional Background</h2>
-                        <p>
-                            I am a technically minded, strategic thinker with over 5+ years of experience in marketing, sales, and product roles within the technology industry. My proven track record includes working with startups to enterprise brands to integrate technology within their marketing communications strategies, resulting in achieving milestones through comprehensive market research, 360° customer views, and meeting KPIs.
-                        </p>
-                        <p>
-                            My expertise lies in product marketing, go-to-market strategy development, and data-driven decision making. I have successfully led cross-functional teams to deliver integrated marketing campaigns that drive measurable results in lead generation and customer acquisition.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section">
-                        <h2>My Philosophy</h2>
-                        <p>
-                            I believe in the power of strategic thinking combined with tactical execution. My approach centers on understanding customer needs deeply, leveraging data to inform decisions, and creating meaningful connections between technology solutions and business outcomes.
-                        </p>
-                    </div>
+    <!-- Main Content -->
+    <main class="main">
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1 class="page-title">About Me</h1>
+                        <div class="about-bio">
+                            <p>
+                                Technically minded, strategic thinker with over 5+ years of experience in marketing, sales, and product roles within the technology industry. Proven track record of working with startups to enterprise brands to integrate technology within their marketing communications strategies, resulting in achieving milestones through comprehensive market research, 360° customer views, and meeting KPIs.
+                            </p>
+                            <p>
+                                My passion lies in bridging the gap between complex technology solutions and meaningful business outcomes. I thrive on developing comprehensive Go-To-Market strategies that not only identify the right customers but also create compelling narratives that drive engagement and conversion.
+                            </p>
+                            <p>
+                                Throughout my career, I've had the privilege of working with diverse teams across multiple disciplines, from engineering and product development to sales and customer success. This cross-functional experience has given me a unique perspective on how to align technical capabilities with market needs and business objectives.
+                            </p>
+                        </div>
 
-                    <div class="about-section">
-                        <h2>What I Do</h2>
-                        <ul>
-                            <li>Develop and execute comprehensive Go-To-Market strategies</li>
-                            <li>Conduct market research and competitive analysis</li>
-                            <li>Create and implement integrated marketing campaigns</li>
-                            <li>Lead cross-functional teams to drive product success</li>
-                            <li>Analyze performance metrics and optimize for ROI</li>
-                        </ul>
+                        <div class="about-philosophy">
+                            <h2>My Philosophy</h2>
+                            <p>
+                                I believe that the best products are born from a deep understanding of customer needs, backed by solid data, and executed with precision. My approach combines analytical rigor with creative problem-solving to deliver solutions that not only meet immediate business goals but also build long-term value for both customers and organizations.
+                            </p>
+                        </div>
+
+                        <div class="about-goals">
+                            <h2>What I Do</h2>
+                            <ul>
+                                <li>Develop and execute comprehensive Go-To-Market strategies</li>
+                                <li>Conduct market research and competitive analysis</li>
+                                <li>Create customer profiles and buyer personas</li>
+                                <li>Design integrated marketing campaigns</li>
+                                <li>Lead cross-functional teams to drive product success</li>
+                                <li>Analyze data to optimize performance and ROI</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <span>Professional Photo</span>
+                    <div class="about-image">
+                        <img src="./images/professional-photo.jpg" alt="Joshua D. Intagliata - Professional Photo" class="about-photo">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Joshua D. Intagliata. All rights reserved.</p>
+                <p class="footer-text">© 2025 Joshua D. Intagliata. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Intagonizer/Joshua.Intagliata.github.io" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
