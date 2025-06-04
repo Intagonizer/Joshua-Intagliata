@@ -1,98 +1,130 @@
+// Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- Sticky Header Shadow on Scroll ---
-    const header = document.querySelector('.sticky-header');
-    if (header) {
-        // Initially, the shadow is defined in CSS. This script can add/remove
-        // a class for more complex shadow behavior if needed, but for a simple
-        // static shadow, CSS is enough.
-        // If you want shadow to appear only on scroll:
-        // header.style.boxShadow = "none"; // remove initial shadow
-        // window.addEventListener('scroll', function() {
-        //     if (window.scrollY > 20) { // Add shadow after scrolling 20px
-        //         header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-        //     } else {
-        //         header.style.boxShadow = 'none';
-        //     }
-        // });
-    }
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-    // --- Mobile Navigation Toggle ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const isExpanded = navLinks.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-            menuToggle.classList.toggle('active'); // For styling the hamburger to an X
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Contact form handling (simple mailto fallback)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent(`Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:JDIntagliata@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Optional: Show success message
+            alert('Your default email client should open with the message. If not, please email me directly at JDIntagliata@gmail.com');
         });
     }
 
-    // --- Update Footer Year ---
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.backgroundColor = '#ffffff';
+            header.style.backdropFilter = 'none';
+        }
+    });
 
-    // --- Smooth Scrolling for Anchor Links (Optional) ---
-    // If you add internal page links like <a href="#sectionId">
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //     anchor.addEventListener('click', function (e) {
-    //         const hrefAttribute = this.getAttribute('href');
-    //         // Ensure it's a valid ID selector and not just "#" or an external link
-    //         if (hrefAttribute && hrefAttribute.startsWith('#') && hrefAttribute.length > 1) {
-    //             const targetElement = document.querySelector(hrefAttribute);
-    //             if (targetElement) {
-    //                 e.preventDefault();
-    //                 targetElement.scrollIntoView({
-    //                     behavior: 'smooth'
-    //                 });
-    //             }
-    //         }
-    //     });
-    // });
+    // Animate elements on scroll (optional enhancement)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-    // --- Active Navigation Link Styling ---
-    // The CSS handles the .active class based on the body's current page context.
-    // This JS part is mainly for dynamically setting it if needed or for single-page apps.
-    // For multi-page sites, adding 'active' class directly in HTML is simpler.
-    // The provided HTML already has the 'active' class set on the correct nav link per page.
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
 
-    // --- Contact Form Submission (Basic - No Backend) ---
-    // If you uncomment the form in contact.html:
-    // const contactForm = document.getElementById('contactForm');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', function(e) {
-    //         e.preventDefault(); // Prevent default form submission
-            
-    //         // Basic validation example (can be more robust)
-    //         const name = document.getElementById('name').value.trim();
-    //         const email = document.getElementById('email').value.trim();
-    //         const message = document.getElementById('message').value.trim();
-
-    //         if (!name || !email || !message) {
-    //             alert('Please fill in all fields.');
-    //             return;
-    //         }
-    //         if (!validateEmail(email)) {
-    //             alert('Please enter a valid email address.');
-    //             return;
-    //         }
-
-    //         // If using a mailto link for submission:
-    //         // const subject = "Website Contact Form Submission";
-    //         // window.location.href = `mailto:JDIntagliata@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message)}`;
-            
-    //         alert('Thank you for your message! (This is a demo - no email sent yet)');
-    //         contactForm.reset(); // Clear the form
-    //     });
-    // }
-
-    // function validateEmail(email) {
-    //     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //     return re.test(String(email).toLowerCase());
-    // }
-
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.skill-card, .job, .education-item, .project');
+    animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
+    });
 });
+
+// Utility function for form validation
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Add active nav link highlighting based on current page
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkPage = link.getAttribute('href');
+        
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === '/' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
