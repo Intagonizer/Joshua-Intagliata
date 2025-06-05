@@ -1,18 +1,3 @@
-<div class="section">
-    <div class="section-title">Skills</div>
-    <div class="skills-category">
-        <h4>Category Name</h4>
-        <div class="skill-item">
-            <span>Skill Name</span>
-            <div class="skill-dots">
-                <div class="dot filled"></div>
-                <div class="dot filled"></div>
-                <div class="dot filled"></div>
-
-_________________
-Here's the updated code with all the skills you requested, with all of them set to five dots out of five:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +8,7 @@ Here's the updated code with all the skills you requested, with all of them set 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Original Navigation CSS Variables */
         :root {
@@ -36,15 +22,18 @@ Here's the updated code with all the skills you requested, with all of them set 
             --font-primary: 'Montserrat', sans-serif;
             --font-secondary: 'Open Sans', sans-serif;
         }
+
         /* Reset and Base Styles for Navigation */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.4;
@@ -53,6 +42,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             min-height: 100vh;
             position: relative;
         }
+
         /* Header and Navigation */
         .header {
             background-color: var(--background-white);
@@ -63,9 +53,11 @@ Here's the updated code with all the skills you requested, with all of them set 
             right: 0;
             z-index: 1000;
         }
+
         .nav {
             padding: 1rem 0;
         }
+
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -74,6 +66,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .nav-logo {
             font-family: var(--font-primary);
             font-size: 1.5rem;
@@ -82,14 +75,17 @@ Here's the updated code with all the skills you requested, with all of them set 
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .nav-logo:hover {
             color: var(--secondary-accent);
         }
+
         .nav-list {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
+
         .nav-link {
             color: var(--text-primary);
             text-decoration: none;
@@ -97,10 +93,12 @@ Here's the updated code with all the skills you requested, with all of them set 
             transition: color 0.3s ease;
             position: relative;
         }
+
         .nav-link:hover,
         .nav-link.active {
             color: var(--primary-accent);
         }
+
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -110,12 +108,14 @@ Here's the updated code with all the skills you requested, with all of them set 
             height: 2px;
             background-color: var(--primary-accent);
         }
+
         /* Mobile Navigation Toggle */
         .nav-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
+
         .bar {
             width: 25px;
             height: 3px;
@@ -123,6 +123,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             margin: 3px 0;
             transition: 0.3s;
         }
+
         /* Download Button Section */
         .download-section {
             margin-top: 80px; /* Account for fixed header */
@@ -131,11 +132,13 @@ Here's the updated code with all the skills you requested, with all of them set 
             background: white;
             border-bottom: 1px solid #e9ecef;
         }
+
         .download-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .download-title {
             font-family: var(--font-primary);
             font-size: 2.5rem;
@@ -143,11 +146,13 @@ Here's the updated code with all the skills you requested, with all of them set 
             color: var(--primary-accent);
             margin-bottom: 1rem;
         }
+
         .download-intro {
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
         }
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -160,16 +165,19 @@ Here's the updated code with all the skills you requested, with all of them set 
             cursor: pointer;
             font-size: 1rem;
         }
+
         .btn-primary {
             background-color: var(--primary-accent);
             color: white;
             border-color: var(--primary-accent);
         }
+
         .btn-primary:hover {
             background-color: transparent;
             color: var(--primary-accent);
             border-color: var(--primary-accent);
         }
+
         /* Resume Design Styles */
         .resume-container {
             max-width: 1000px;
@@ -181,6 +189,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             min-height: 800px;
             position: relative;
         }
+
         /* Background decorative elements */
         .resume-container::before {
             content: '';
@@ -193,6 +202,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             border-radius: 50%;
             z-index: -1;
         }
+
         .resume-container::after {
             content: '';
             position: absolute;
@@ -204,6 +214,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             border-radius: 50%;
             z-index: -1;
         }
+
         /* Left Column */
         .left-column {
             background: linear-gradient(135deg, #243551 0%, #1a2a3e 100%);
@@ -211,6 +222,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             padding: 40px 30px;
             position: relative;
         }
+
         .left-column::before {
             content: '';
             position: absolute;
@@ -221,6 +233,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             background: rgba(153, 36, 72, 0.2);
             border-radius: 50%;
         }
+
         .left-column::after {
             content: '';
             position: absolute;
@@ -231,10 +244,12 @@ Here's the updated code with all the skills you requested, with all of them set 
             background: rgba(153, 36, 72, 0.15);
             border-radius: 50%;
         }
+
         .resume-header {
             text-align: center;
             margin-bottom: 30px;
         }
+
         .name {
             font-size: 24px;
             font-weight: bold;
@@ -242,15 +257,18 @@ Here's the updated code with all the skills you requested, with all of them set 
             letter-spacing: 1px;
             color: #ffffff;
         }
+
         .contact-info {
             font-size: 12px;
             line-height: 1.6;
             opacity: 0.9;
             color: #ffffff;
         }
+
         .section {
             margin-bottom: 35px;
         }
+
         .section-title {
             background: #992448;
             color: #ffffff;
@@ -263,15 +281,18 @@ Here's the updated code with all the skills you requested, with all of them set 
             letter-spacing: 0.5px;
             box-shadow: 0 2px 8px rgba(153, 36, 72, 0.3);
         }
+
         .profile-text {
             font-size: 12px;
             line-height: 1.6;
             text-align: justify;
             color: #ffffff;
         }
+
         .skills-category {
             margin-bottom: 25px;
         }
+
         .skills-category h4 {
             color: #ffffff;
             font-size: 12px;
@@ -282,18 +303,21 @@ Here's the updated code with all the skills you requested, with all of them set 
             padding: 5px 10px;
             border-radius: 10px;
         }
+
         .skill-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 8px;
-            font-size: 10px;
+            font-size: 11px;
             color: #ffffff;
         }
+
         .skill-dots {
             display: flex;
             gap: 3px;
         }
+
         .dot {
             width: 8px;
             height: 8px;
@@ -301,17 +325,20 @@ Here's the updated code with all the skills you requested, with all of them set 
             background: rgba(255, 255, 255, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         .dot.filled {
             background: #992448;
             border: 1px solid #992448;
             box-shadow: 0 0 5px rgba(153, 36, 72, 0.4);
         }
+
         /* Right Column */
         .right-column {
             padding: 40px 35px;
             background: white;
             position: relative;
         }
+
         .right-column::before {
             content: '';
             position: absolute;
@@ -323,9 +350,11 @@ Here's the updated code with all the skills you requested, with all of them set 
             border-radius: 50%;
             z-index: -1;
         }
+
         .right-section {
             margin-bottom: 35px;
         }
+
         .right-section-title {
             background: #243551;
             color: #ffffff;
@@ -339,12 +368,14 @@ Here's the updated code with all the skills you requested, with all of them set 
             display: inline-block;
             box-shadow: 0 2px 8px rgba(36, 53, 81, 0.3);
         }
+
         .experience-item {
             margin-bottom: 30px;
             border-left: 3px solid #992448;
             padding-left: 20px;
             position: relative;
         }
+
         .experience-item::before {
             content: '';
             position: absolute;
@@ -356,24 +387,28 @@ Here's the updated code with all the skills you requested, with all of them set 
             border-radius: 50%;
             box-shadow: 0 0 8px rgba(153, 36, 72, 0.4);
         }
+
         .company-header {
             font-weight: bold;
             font-size: 14px;
             color: #243551;
             margin-bottom: 5px;
         }
+
         .company-description {
             font-style: italic;
             color: #666;
             font-size: 11px;
             margin-bottom: 10px;
         }
+
         .job-title {
             font-weight: bold;
             color: #992448;
             font-size: 13px;
             margin-bottom: 5px;
         }
+
         .job-dates {
             color: #ffffff;
             font-size: 11px;
@@ -383,18 +418,22 @@ Here's the updated code with all the skills you requested, with all of them set 
             border-radius: 12px;
             display: inline-block;
         }
+
         .job-description {
             font-size: 11px;
             line-height: 1.5;
             color: #333;
         }
+
         .job-description ul {
             margin-left: 15px;
         }
+
         .job-description li {
             margin-bottom: 8px;
             position: relative;
         }
+
         .job-description li::before {
             content: '▸';
             color: #992448;
@@ -402,6 +441,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             position: absolute;
             left: -15px;
         }
+
         .education-item {
             margin-bottom: 15px;
             font-size: 12px;
@@ -410,48 +450,58 @@ Here's the updated code with all the skills you requested, with all of them set 
             background: rgba(36, 53, 81, 0.05);
             border-radius: 0 8px 8px 0;
         }
+
         .education-title {
             font-weight: bold;
             color: #243551;
         }
+
         .education-details {
             color: #666;
             font-size: 11px;
         }
+
         /* Highlight important metrics */
         .metric {
             color: #992448;
             font-weight: bold;
         }
+
         /* Emphasized text styling */
         strong {
             color: #243551;
             font-weight: bold;
         }
+
         /* Links styling */
         a {
             color: #ffffff;
             text-decoration: none;
         }
+
         a:hover {
             color: #992448;
             text-decoration: underline;
         }
+
         /* Email link in contact info */
         .contact-info a {
             color: #ffffff;
             opacity: 0.9;
         }
+
         .contact-info a:hover {
             opacity: 1;
             text-decoration: underline;
         }
+
         /* Footer */
         .footer {
             background-color: var(--background-light);
             padding: 2rem 0;
             border-top: 1px solid var(--border-light);
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -462,28 +512,34 @@ Here's the updated code with all the skills you requested, with all of them set 
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .footer-text {
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
+
         .footer-links {
             display: flex;
             gap: 1.5rem;
         }
+
         .footer-link {
             color: var(--primary-accent);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
+
         .footer-link:hover {
             color: var(--secondary-accent);
         }
+
         /* Improve text contrast in profile section */
         .profile-text strong {
             color: #ffffff;
             font-weight: bold;
         }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
@@ -498,38 +554,48 @@ Here's the updated code with all the skills you requested, with all of them set 
                 box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
                 z-index: 999;
             }
+
             .nav-menu.active {
                 left: 0;
             }
+
             .nav-list {
                 flex-direction: column;
                 gap: 1rem;
                 padding: 2rem 0;
             }
+
             .nav-toggle {
                 display: flex;
             }
+
             .resume-container {
                 grid-template-columns: 1fr;
                 margin: 1rem;
             }
+
             .left-column {
                 order: 2;
             }
+
             .right-column {
                 order: 1;
             }
+
             .download-title {
                 font-size: 2rem;
             }
         }
+
         @media (max-width: 480px) {
             .download-container {
                 padding: 0 15px;
             }
+
             .download-title {
                 font-size: 1.8rem;
             }
+
             .btn {
                 padding: 10px 20px;
                 font-size: 0.9rem;
@@ -567,14 +633,16 @@ Here's the updated code with all the skills you requested, with all of them set 
             </div>
         </nav>
     </header>
+
     <!-- Download Section -->
     <section class="download-section">
         <div class="download-container">
             <h1 class="download-title">Resume</h1>
             <p class="download-intro">A comprehensive overview of my professional experience and qualifications.</p>
-            <a href="./assets/Intagliata.Joshua.Resume V06042025-2" download="Intagliata.Joshua.Resume V06042025-2" class="btn btn-primary">Download PDF Resume</a>
+            <a href="./assets/Intagliata.Joshua.Resume V06042025-2.pdf" download="Intagliata.Joshua.Resume V06042025-2.pdf" class="btn btn-primary">Download PDF Resume</a>
         </div>
     </section>
+
     <!-- Resume Content -->
     <div class="resume-container">
         <!-- Left Column -->
@@ -584,7 +652,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                 <div class="contact-info">
                     Address: Parma Heights, OH 44130<br>
                     Phone Number: 440-223-1963<br>
-                    Email address: <a href="mailto:JDIntagliata@gmail.com">JDIntagliata@gmail.com</a>
+                    Email address: <a href="mailto:Josh.Intagliata@gmail.com">Josh.Intagliata@gmail.com</a>
                 </div>
             </div>
             <div class="section">
@@ -624,21 +692,11 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span>Messaging & Positioning</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Value Proposition Development</span>
                         <div class="skill-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -654,47 +712,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Competitive Analysis</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Sales Enablement</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Product Adoption</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Customer Lifecycle Management</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -704,7 +722,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -727,17 +745,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Integrated Campaigns</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -747,27 +755,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>SEO/SEM Principles</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Digital Advertising</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -784,43 +772,13 @@ Here's the updated code with all the skills you requested, with all of them set 
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span>Scrum Framework</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>User Stories</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Epics</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
                         <span>Roadmapping</span>
                         <div class="skill-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -829,38 +787,8 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Feature Prioritization</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Win/Loss Analysis</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Product Lifecycle Management</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -873,37 +801,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Market Research</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>OKR/KPI Tracking</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Customer Insights</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -913,7 +811,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -926,27 +824,7 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Outreach</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>ZoomInfo</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -956,67 +834,17 @@ Here's the updated code with all the skills you requested, with all of them set 
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span>Balsamiq</span>
+                        <span>ZoomInfo</span>
                         <div class="skill-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Statista</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Monday.com</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Asana</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>CRMs</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>CDPs</span>
-                        <div class="skill-dots">
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
-                            <div class="dot filled"></div>
+                            <div class="dot"></div>
                         </div>
                     </div>
                 </div>
@@ -1099,6 +927,7 @@ Here's the updated code with all the skills you requested, with all of them set 
             </div>
         </div>
     </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -1109,11 +938,13 @@ Here's the updated code with all the skills you requested, with all of them set 
             </div>
         </div>
     </footer>
+
     <script>
         // Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.getElementById('nav-toggle');
             const navMenu = document.getElementById('nav-menu');
+
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
@@ -1123,4 +954,6 @@ Here's the updated code with all the skills you requested, with all of them set 
         });
     </script>
 </body>
+</html>
+
 </html>
