@@ -317,7 +317,19 @@
             display: flex;
             gap: 3px;
         }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
+        .dot.filled {
+            background: #992448;
+            border: 1px solid #992448;
+            box-shadow: 0 0 5px rgba(153, 36, 72, 0.4);
+        }
         /* Right Column */
         .right-column {
             padding: 40px 35px;
