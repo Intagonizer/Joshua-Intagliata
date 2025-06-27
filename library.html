@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         /* CSS Variables for consistency */
         :root {
@@ -24,18 +23,15 @@
             --wood-brown: #8B4513;
             --wood-light: #D2691E;
         }
-
         /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: var(--font-secondary);
             font-size: 16px;
@@ -44,7 +40,6 @@
             background: linear-gradient(135deg, #f5f1eb 0%, #e8e2d5 100%);
             min-height: 100vh;
         }
-
         /* Header and Navigation */
         .header {
             background-color: var(--background-white);
@@ -55,11 +50,9 @@
             right: 0;
             z-index: 1000;
         }
-
         .nav {
             padding: 1rem 0;
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -68,7 +61,6 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .nav-logo {
             font-family: var(--font-primary);
             font-size: 1.5rem;
@@ -77,17 +69,14 @@
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
         .nav-logo:hover {
             color: var(--secondary-accent);
         }
-
         .nav-list {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-
         .nav-link {
             color: var(--text-primary);
             text-decoration: none;
@@ -95,12 +84,10 @@
             transition: color 0.3s ease;
             position: relative;
         }
-
         .nav-link:hover,
         .nav-link.active {
             color: var(--primary-accent);
         }
-
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -110,14 +97,12 @@
             height: 2px;
             background-color: var(--primary-accent);
         }
-
         /* Mobile Navigation Toggle */
         .nav-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
-
         .bar {
             width: 25px;
             height: 3px;
@@ -125,13 +110,11 @@
             margin: 3px 0;
             transition: 0.3s;
         }
-
         /* Main Content */
         .main {
             margin-top: 80px;
             min-height: calc(100vh - 160px);
         }
-
         /* Library Header */
         .library-header {
             padding: 4rem 0 2rem 0;
@@ -139,21 +122,18 @@
             background: linear-gradient(135deg, var(--primary-accent) 0%, #1a2a3e 100%);
             color: white;
         }
-
         .library-title {
             font-family: var(--font-primary);
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-
         .library-subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
-
         .library-stats {
             display: flex;
             justify-content: center;
@@ -161,30 +141,129 @@
             margin-top: 2rem;
             flex-wrap: wrap;
         }
-
         .stat-item {
             text-align: center;
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--secondary-accent);
             display: block;
         }
-
         .stat-label {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-
+        /* Currently Reading Section */
+        .currently-reading {
+            background: white;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .currently-reading-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .currently-reading-shelf {
+            background: linear-gradient(90deg, var(--wood-brown) 0%, var(--wood-light) 50%, var(--wood-brown) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .currently-reading-shelf::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
+            border-radius: 10px 10px 0 0;
+        }
+        .currently-reading-label {
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            background: var(--secondary-accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .currently-reading-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .currently-reading-cover {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .currently-reading-cover:hover {
+            transform: scale(1.05);
+        }
+        .currently-reading-info {
+            flex: 1;
+            color: white;
+        }
+        .currently-reading-title {
+            font-family: var(--font-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .currently-reading-author {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .currently-reading-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+        .reading-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .progress-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary-accent);
+            width: 25%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
         /* Search and Filter */
         .library-controls {
             padding: 2rem 0;
             background: white;
             border-bottom: 1px solid var(--border-light);
         }
-
         .controls-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -194,13 +273,11 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
         .search-box {
             flex: 1;
             min-width: 250px;
             position: relative;
         }
-
         .search-input {
             width: 100%;
             padding: 12px 20px;
@@ -209,18 +286,15 @@
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
-
         .search-input:focus {
             outline: none;
             border-color: var(--primary-accent);
         }
-
         .filter-buttons {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
-
         .filter-btn {
             padding: 8px 16px;
             border: 2px solid var(--primary-accent);
@@ -231,20 +305,17 @@
             transition: all 0.3s ease;
             font-weight: 500;
         }
-
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--primary-accent);
             color: white;
         }
-
         /* Library Container */
         .library-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 20px;
         }
-
         /* Bookshelf Styling */
         .bookshelf {
             background: linear-gradient(90deg, var(--wood-brown) 0%, var(--wood-light) 50%, var(--wood-brown) 100%);
@@ -254,7 +325,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             position: relative;
         }
-
         .bookshelf::before {
             content: '';
             position: absolute;
@@ -265,7 +335,6 @@
             background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
             border-radius: 10px 10px 0 0;
         }
-
         .shelf-label {
             position: absolute;
             top: -8px;
@@ -277,14 +346,12 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 20px;
             padding: 10px;
         }
-
         /* Individual Book Styling */
         .book {
             display: flex;
@@ -297,11 +364,9 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
-
         .book:hover {
             transform: translateY(-5px) scale(1.05);
         }
-
         .book-cover {
             width: 120px;
             height: 180px;
@@ -311,16 +376,13 @@
             margin-bottom: 10px;
             transition: box-shadow 0.3s ease;
         }
-
         .book:hover .book-cover {
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
-
         .book-info {
             text-align: center;
             color: white;
         }
-
         .book-title {
             font-size: 0.9rem;
             font-weight: 600;
@@ -331,7 +393,6 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         .book-author {
             font-size: 0.8rem;
             opacity: 0.8;
@@ -340,7 +401,6 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         /* Book Modal */
         .book-modal {
             display: none;
@@ -354,7 +414,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .modal-content {
             background: white;
             padding: 2rem;
@@ -365,7 +424,6 @@
             overflow-y: auto;
             position: relative;
         }
-
         .modal-close {
             position: absolute;
             top: 10px;
@@ -374,7 +432,6 @@
             cursor: pointer;
             color: var(--text-secondary);
         }
-
         .modal-book-cover {
             width: 150px;
             height: 225px;
@@ -384,25 +441,21 @@
             margin: 0 20px 20px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         .modal-book-title {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-accent);
             margin-bottom: 0.5rem;
         }
-
         .modal-book-author {
             font-size: 1.1rem;
             color: var(--secondary-accent);
             margin-bottom: 1rem;
         }
-
         .modal-book-description {
             line-height: 1.6;
             color: var(--text-secondary);
         }
-
         /* Footer */
         .footer {
             background-color: var(--background-light);
@@ -410,7 +463,6 @@
             border-top: 1px solid var(--border-light);
             margin-top: 3rem;
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -421,28 +473,23 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .footer-text {
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
-
         .footer-links {
             display: flex;
             gap: 1.5rem;
         }
-
         .footer-link {
             color: var(--primary-accent);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
         .footer-link:hover {
             color: var(--secondary-accent);
         }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
@@ -457,56 +504,55 @@
                 box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
                 z-index: 999;
             }
-
             .nav-menu.active {
                 left: 0;
             }
-
             .nav-list {
                 flex-direction: column;
                 gap: 1rem;
                 padding: 2rem 0;
             }
-
             .nav-toggle {
                 display: flex;
             }
-
             .library-title {
                 font-size: 2rem;
             }
-
             .library-stats {
                 gap: 2rem;
             }
-
             .stat-number {
                 font-size: 2rem;
             }
-
+            .currently-reading-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .currently-reading-cover {
+                width: 120px;
+                height: 180px;
+            }
+            .currently-reading-title {
+                font-size: 1.5rem;
+            }
             .controls-container {
                 flex-direction: column;
                 align-items: stretch;
             }
-
             .filter-buttons {
                 justify-content: center;
             }
-
             .books-grid {
                 grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
                 gap: 15px;
             }
-
             .book-cover {
                 width: 100px;
                 height: 150px;
             }
-
             .modal-content {
                 padding: 1.5rem;
             }
-
             .modal-book-cover {
                 width: 120px;
                 height: 180px;
@@ -515,12 +561,10 @@
                 margin: 0 auto 20px auto;
             }
         }
-
         @media (max-width: 480px) {
             .books-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             }
-
             .book-cover {
                 width: 90px;
                 height: 135px;
@@ -561,7 +605,6 @@
             </div>
         </nav>
     </header>
-
     <!-- Main Content -->
     <main class="main">
         <!-- Library Header -->
@@ -585,7 +628,29 @@
                 </div>
             </div>
         </section>
-
+        <!-- Currently Reading Section -->
+        <section class="currently-reading">
+            <div class="currently-reading-container">
+                <div class="currently-reading-shelf">
+                    <div class="currently-reading-label">Currently Reading</div>
+                    <div class="currently-reading-content">
+                        <img class="currently-reading-cover" src="https://via.placeholder.com/150x225/243551/FFFFFF?text=Competing+in+the+Age+of+AI" alt="Competing in the Age of AI" onerror="this.src='https://via.placeholder.com/150x225/243551/FFFFFF?text=Book'">
+                        <div class="currently-reading-info">
+                            <h2 class="currently-reading-title">Competing in the Age of AI</h2>
+                            <p class="currently-reading-author">by Marco Iansiti & Karim R. Lakhani</p>
+                            <p class="currently-reading-description">How AI is transforming business strategy and creating new competitive advantages in the digital economy. This book explores how artificial intelligence is reshaping the competitive landscape and what it means for businesses today.</p>
+                            <div class="reading-progress">
+                                <span class="progress-text">Progress:</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="progress-text">25%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Search and Filter Controls -->
         <section class="library-controls">
             <div class="controls-container">
@@ -603,7 +668,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Library Container -->
         <div class="library-container">
             <!-- Business & Strategy Shelf -->
@@ -613,7 +677,6 @@
                     <!-- Books will be populated by JavaScript -->
                 </div>
             </div>
-
             <!-- Leadership & Management Shelf -->
             <div class="bookshelf">
                 <div class="shelf-label">Leadership & Management</div>
@@ -621,7 +684,6 @@
                     <!-- Books will be populated by JavaScript -->
                 </div>
             </div>
-
             <!-- Sales & Communication Shelf -->
             <div class="bookshelf">
                 <div class="shelf-label">Sales & Communication</div>
@@ -629,7 +691,6 @@
                     <!-- Books will be populated by JavaScript -->
                 </div>
             </div>
-
             <!-- Personal Development Shelf -->
             <div class="bookshelf">
                 <div class="shelf-label">Personal Development</div>
@@ -639,7 +700,6 @@
             </div>
         </div>
     </main>
-
     <!-- Book Modal -->
     <div class="book-modal" id="bookModal">
         <div class="modal-content">
@@ -650,7 +710,6 @@
             <p class="modal-book-description" id="modalDescription"></p>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -661,7 +720,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Book data with your library
         const books = [
@@ -882,7 +940,6 @@
                 description: "Building a business when there are no easy answers - practical wisdom for startup leaders."
             }
         ];
-
         // Function to get book cover URL using Open Library API
         function getBookCoverUrl(title, author) {
             // For now, we'll use a placeholder service that generates book-like covers
@@ -890,7 +947,6 @@
             const placeholderUrl = `https://via.placeholder.com/120x180/243551/FFFFFF?text=${encodeURIComponent(title.substring(0, 15))}`;
             return placeholderUrl;
         }
-
         // Function to render books
         function renderBooks(booksToRender = books) {
             // Clear all shelves
@@ -898,7 +954,6 @@
             document.getElementById('leadershipBooks').innerHTML = '';
             document.getElementById('salesBooks').innerHTML = '';
             document.getElementById('personalBooks').innerHTML = '';
-
             booksToRender.forEach(book => {
                 const bookElement = document.createElement('div');
                 bookElement.className = 'book';
@@ -909,10 +964,8 @@
                         <div class="book-author">${book.author}</div>
                     </div>
                 `;
-
                 // Add click event for modal
                 bookElement.addEventListener('click', () => openBookModal(book));
-
                 // Add to appropriate shelf
                 const targetShelf = getTargetShelf(book.category);
                 if (targetShelf) {
@@ -920,7 +973,6 @@
                 }
             });
         }
-
         // Function to determine target shelf
         function getTargetShelf(category) {
             switch(category) {
@@ -938,7 +990,6 @@
                     return document.getElementById('businessBooks');
             }
         }
-
         // Function to open book modal
         function openBookModal(book) {
             document.getElementById('modalCover').src = getBookCoverUrl(book.title, book.author);
@@ -947,24 +998,21 @@
             document.getElementById('modalDescription').textContent = book.description;
             document.getElementById('bookModal').style.display = 'flex';
         }
-
         // Search functionality
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            const filteredBooks = books.filter(book => 
-                book.title.toLowerCase().includes(searchTerm) || 
+            const filteredBooks = books.filter(book =>
+                book.title.toLowerCase().includes(searchTerm) ||
                 book.author.toLowerCase().includes(searchTerm)
             );
             renderBooks(filteredBooks);
         });
-
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 // Update active button
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-
                 // Filter books
                 const category = this.getAttribute('data-category');
                 if (category === 'all') {
@@ -975,30 +1023,25 @@
                 }
             });
         });
-
         // Modal functionality
         document.getElementById('modalClose').addEventListener('click', function() {
             document.getElementById('bookModal').style.display = 'none';
         });
-
         document.getElementById('bookModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 this.style.display = 'none';
             }
         });
-
         // Mobile navigation
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.getElementById('nav-toggle');
             const navMenu = document.getElementById('nav-menu');
-
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
                     navToggle.classList.toggle('active');
                 });
             }
-
             // Initial render
             renderBooks();
         });
