@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Joshua D. Intagliata</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for consistency */
+        :root {
+            --primary-accent: #243551;
+            --secondary-accent: #992448;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --background-white: #ffffff;
+            --background-light: #f8f9fa;
+            --border-light: #e9ecef;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --wood-brown: #8B4513;
+            --wood-light: #D2691E;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8e2d5 100%);
+            min-height: 100vh;
+        }
+
+        /* Header and Navigation */
+        .header {
+            background-color: var(--background-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--secondary-accent);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-accent);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--primary-accent);
+        }
+
+        /* Mobile Navigation Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-accent);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 80px;
+            min-height: calc(100vh - 160px);
+        }
+
+        /* Library Header */
+        .library-header {
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-accent) 0%, #1a2a3e 100%);
+            color: white;
+        }
+
+        .library-title {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .library-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .library-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Search and Filter */
+        .library-controls {
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .controls-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary-accent);
+            background: transparent;
+            color: var(--primary-accent);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-accent);
+            color: white;
+        }
+
+        /* Library Container */
+        .library-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        /* Bookshelf Styling */
+        .bookshelf {
+            background: linear-gradient(90deg, var(--wood-brown) 0%, var(--wood-light) 50%, var(--wood-brown) 100%);
+            padding: 20px;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .bookshelf::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .shelf-label {
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            background: var(--primary-accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        /* Individual Book Styling */
+        .book {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .book:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .book:hover .book-cover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .book-info {
+            text-align: center;
+            color: white;
+        }
+
+        .book-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Book Modal */
+        .book-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .modal-book-cover {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 10px;
+            float: left;
+            margin: 0 20px 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-book-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-book-author {
+            font-size: 1.1rem;
+            color: var(--secondary-accent);
+            margin-bottom: 1rem;
+        }
+
+        .modal-book-description {
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--background-light);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-link {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary-accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .library-title {
+                font-size: 2rem;
+            }
+
+            .library-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-buttons {
+                justify-content: center;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+
+            .book-cover {
+                width: 100px;
+                height: 150px;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-book-cover {
+                width: 120px;
+                height: 180px;
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .book-cover {
+                width: 90px;
+                height: 135px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Joshua D. Intagliata</a>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resume.html" class="nav-link">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="library.html" class="nav-link active">Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Library Header -->
+        <section class="library-header">
+            <div class="container">
+                <h1 class="library-title">My Virtual Library</h1>
+                <p class="library-subtitle">A curated collection of books that have shaped my thinking in business, leadership, strategy, and personal development.</p>
+                <div class="library-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">36</span>
+                        <span class="stat-label">Books Read</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Insights Gained</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Controls -->
+        <section class="library-controls">
+            <div class="controls-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search by title or author..." id="searchInput">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="business">Business</button>
+                    <button class="filter-btn" data-category="leadership">Leadership</button>
+                    <button class="filter-btn" data-category="sales">Sales</button>
+                    <button class="filter-btn" data-category="strategy">Strategy</button>
+                    <button class="filter-btn" data-category="personal">Personal Dev</button>
+                    <button class="filter-btn" data-category="psychology">Psychology</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Library Container -->
+        <div class="library-container">
+            <!-- Business & Strategy Shelf -->
+            <div class="bookshelf">
+                <div class="shelf-label">Business & Strategy</div>
+                <div class="books-grid" id="businessBooks">
+                    <!-- Books will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Leadership & Management Shelf -->
+            <div class="bookshelf">
+                <div class="shelf-label">Leadership & Management</div>
+                <div class="books-grid" id="leadershipBooks">
+                    <!-- Books will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sales & Communication Shelf -->
+            <div class="bookshelf">
+                <div class="shelf-label">Sales & Communication</div>
+                <div class="books-grid" id="salesBooks">
+                    <!-- Books will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Personal Development Shelf -->
+            <div class="bookshelf">
+                <div class="shelf-label">Personal Development</div>
+                <div class="books-grid" id="personalBooks">
+                    <!-- Books will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Book Modal -->
+    <div class="book-modal" id="bookModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img class="modal-book-cover" id="modalCover" src="" alt="">
+            <h2 class="modal-book-title" id="modalTitle"></h2>
+            <p class="modal-book-author" id="modalAuthor"></p>
+            <p class="modal-book-description" id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 Joshua D. Intagliata. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/josh-intagliata-product-expert/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                <a href="https://intagonizer.github.io/Joshua-Intagliata" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Book data with your library
+        const books = [
+            {
+                title: "Competing in the Age of AI",
+                author: "Marco Iansiti",
+                category: "business",
+                description: "How AI is transforming business strategy and creating new competitive advantages in the digital economy."
+            },
+            {
+                title: "Traction",
+                author: "Gino Wickman",
+                category: "business",
+                description: "Get a grip on your business with the Entrepreneurial Operating System (EOS) for running and growing your company."
+            },
+            {
+                title: "The Secrets to Closing the Sale",
+                author: "Zig Ziglar",
+                category: "sales",
+                description: "Master the art of selling with proven techniques from one of America's greatest sales trainers."
+            },
+            {
+                title: "EOS Life",
+                author: "Gino Wickman",
+                category: "personal",
+                description: "How to live your ideal life by designing and implementing your personal operating system."
+            },
+            {
+                title: "What the Heck is EOS?",
+                author: "Gino Wickman",
+                category: "business",
+                description: "A complete guide for employees on understanding and implementing the Entrepreneurial Operating System."
+            },
+            {
+                title: "The Master and His Emissary",
+                author: "Iain McGilchrist",
+                category: "psychology",
+                description: "A groundbreaking exploration of how the brain's hemispheres shape our world and consciousness."
+            },
+            {
+                title: "Trillion Dollar Coach",
+                author: "Eric Schmidt",
+                category: "leadership",
+                description: "The leadership playbook of Bill Campbell, who helped build several of the world's most successful companies."
+            },
+            {
+                title: "The Leveling",
+                author: "Michael O'Sullivan",
+                category: "strategy",
+                description: "What's next after globalization and how nations, regions, and communities can thrive in a post-global world."
+            },
+            {
+                title: "Shut the Hell Up and Sell",
+                author: "Ronnell Richards",
+                category: "sales",
+                description: "A no-nonsense approach to sales that focuses on results over relationship-building techniques."
+            },
+            {
+                title: "Blitzscaling",
+                author: "Reid Hoffman",
+                category: "business",
+                description: "The lightning-fast path to building massively valuable companies in the startup ecosystem."
+            },
+            {
+                title: "The ONE Thing",
+                author: "Gary Keller",
+                category: "personal",
+                description: "The surprisingly simple truth behind extraordinary results through focused effort and priority."
+            },
+            {
+                title: "Leadership: Six Studies in World Strategy",
+                author: "Henry Kissinger",
+                category: "leadership",
+                description: "Lessons in statecraft from six leaders who shaped the modern world through vision and strategy."
+            },
+            {
+                title: "How Google Works",
+                author: "Eric Schmidt",
+                category: "business",
+                description: "Inside look at Google's unique culture, management principles, and innovation strategies."
+            },
+            {
+                title: "The Diary of a CEO",
+                author: "Steven Bartlett",
+                category: "leadership",
+                description: "33 laws for leadership and life from a young entrepreneur's journey building a global business."
+            },
+            {
+                title: "Getting to Yes",
+                author: "Roger Fisher",
+                category: "sales",
+                description: "The art of negotiating agreements without giving in, based on the Harvard Negotiation Project."
+            },
+            {
+                title: "Super Communicators",
+                author: "Charles Duhigg",
+                category: "personal",
+                description: "How to unlock the secret language of connection and persuade anyone of anything."
+            },
+            {
+                title: "Same as Ever",
+                author: "Morgan Housel",
+                category: "psychology",
+                description: "A guide to what never changes in a world that's constantly changing, focusing on human behavior."
+            },
+            {
+                title: "The Psychology of Money",
+                author: "Morgan Housel",
+                category: "psychology",
+                description: "Timeless lessons on wealth, greed, and happiness that reveal how people think about money."
+            },
+            {
+                title: "Make Your Bed",
+                author: "Admiral William H. McRaven",
+                category: "personal",
+                description: "Little things that can change your life and maybe the world, based on Navy SEAL training principles."
+            },
+            {
+                title: "Meditations",
+                author: "Marcus Aurelius",
+                category: "personal",
+                description: "Timeless Stoic philosophy and personal reflections from the Roman Emperor on life and leadership."
+            },
+            {
+                title: "Blue Ocean Strategy",
+                author: "W. Chan Kim",
+                category: "strategy",
+                description: "How to create uncontested market space and make competition irrelevant through innovation."
+            },
+            {
+                title: "Principles",
+                author: "Ray Dalio",
+                category: "leadership",
+                description: "Life and work principles from the founder of Bridgewater Associates, the world's largest hedge fund."
+            },
+            {
+                title: "The Five Dysfunctions of a Team",
+                author: "Patrick Lencioni",
+                category: "leadership",
+                description: "A leadership fable about how teams can overcome the most common obstacles to teamwork."
+            },
+            {
+                title: "Principles for Navigating Big Debt Crises",
+                author: "Ray Dalio",
+                category: "strategy",
+                description: "How debt crises work and how to navigate them, based on analysis of 48 historical cases."
+            },
+            {
+                title: "Your Next Five Moves",
+                author: "Patrick Bet-David",
+                category: "strategy",
+                description: "Master the art of business strategy by thinking like a chess grandmaster in entrepreneurship."
+            },
+            {
+                title: "The Data Detective",
+                author: "Tim Harford",
+                category: "business",
+                description: "Ten easy rules for making sense of statistics and data in our increasingly complex world."
+            },
+            {
+                title: "When: The Scientific Secrets of Perfect Timing",
+                author: "Daniel H. Pink",
+                category: "personal",
+                description: "The science of timing and how to make better decisions about when to act in life and work."
+            },
+            {
+                title: "See You at the Top",
+                author: "Zig Ziglar",
+                category: "personal",
+                description: "Classic motivational guide to achieving success through positive thinking and goal setting."
+            },
+            {
+                title: "Goals!",
+                author: "Zig Ziglar",
+                category: "personal",
+                description: "How to get everything you want faster than you ever thought possible through effective goal setting."
+            },
+            {
+                title: "The Goal",
+                author: "Eliyahu M. Goldratt",
+                category: "business",
+                description: "A process of ongoing improvement told through the story of a plant manager saving his factory."
+            },
+            {
+                title: "Talking to Strangers",
+                author: "Malcolm Gladwell",
+                category: "psychology",
+                description: "What we should know about the people we don't know and why we're so bad at reading them."
+            },
+            {
+                title: "The Transparency Sale",
+                author: "Todd Caponi",
+                category: "sales",
+                description: "How unexpected honesty and understanding the buying brain can transform your results."
+            },
+            {
+                title: "How to Win Friends and Influence People",
+                author: "Dale Carnegie",
+                category: "personal",
+                description: "Timeless advice on building relationships and influencing others through genuine interest and empathy."
+            },
+            {
+                title: "Smart People Should Build Things",
+                author: "Andrew Yang",
+                category: "business",
+                description: "How to restore our culture of achievement, build a path for entrepreneurs, and create new jobs."
+            },
+            {
+                title: "The Third Wave",
+                author: "Steve Case",
+                category: "business",
+                description: "An entrepreneur's vision of the future where technology integrates seamlessly into every aspect of life."
+            },
+            {
+                title: "The Hard Thing About Hard Things",
+                author: "Ben Horowitz",
+                category: "leadership",
+                description: "Building a business when there are no easy answers - practical wisdom for startup leaders."
+            }
+        ];
+
+        // Function to get book cover URL using Open Library API
+        function getBookCoverUrl(title, author) {
+            // For now, we'll use a placeholder service that generates book-like covers
+            // You can replace these with actual book cover URLs later
+            const placeholderUrl = `https://via.placeholder.com/120x180/243551/FFFFFF?text=${encodeURIComponent(title.substring(0, 15))}`;
+            return placeholderUrl;
+        }
+
+        // Function to render books
+        function renderBooks(booksToRender = books) {
+            // Clear all shelves
+            document.getElementById('businessBooks').innerHTML = '';
+            document.getElementById('leadershipBooks').innerHTML = '';
+            document.getElementById('salesBooks').innerHTML = '';
+            document.getElementById('personalBooks').innerHTML = '';
+
+            booksToRender.forEach(book => {
+                const bookElement = document.createElement('div');
+                bookElement.className = 'book';
+                bookElement.innerHTML = `
+                    <img class="book-cover" src="${getBookCoverUrl(book.title, book.author)}" alt="${book.title}" onerror="this.src='https://via.placeholder.com/120x180/243551/FFFFFF?text=Book'">
+                    <div class="book-info">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-author">${book.author}</div>
+                    </div>
+                `;
+
+                // Add click event for modal
+                bookElement.addEventListener('click', () => openBookModal(book));
+
+                // Add to appropriate shelf
+                const targetShelf = getTargetShelf(book.category);
+                if (targetShelf) {
+                    targetShelf.appendChild(bookElement);
+                }
+            });
+        }
+
+        // Function to determine target shelf
+        function getTargetShelf(category) {
+            switch(category) {
+                case 'business':
+                case 'strategy':
+                    return document.getElementById('businessBooks');
+                case 'leadership':
+                    return document.getElementById('leadershipBooks');
+                case 'sales':
+                    return document.getElementById('salesBooks');
+                case 'personal':
+                case 'psychology':
+                    return document.getElementById('personalBooks');
+                default:
+                    return document.getElementById('businessBooks');
+            }
+        }
+
+        // Function to open book modal
+        function openBookModal(book) {
+            document.getElementById('modalCover').src = getBookCoverUrl(book.title, book.author);
+            document.getElementById('modalTitle').textContent = book.title;
+            document.getElementById('modalAuthor').textContent = `by ${book.author}`;
+            document.getElementById('modalDescription').textContent = book.description;
+            document.getElementById('bookModal').style.display = 'flex';
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredBooks = books.filter(book => 
+                book.title.toLowerCase().includes(searchTerm) || 
+                book.author.toLowerCase().includes(searchTerm)
+            );
+            renderBooks(filteredBooks);
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter books
+                const category = this.getAttribute('data-category');
+                if (category === 'all') {
+                    renderBooks(books);
+                } else {
+                    const filteredBooks = books.filter(book => book.category === category);
+                    renderBooks(filteredBooks);
+                }
+            });
+        });
+
+        // Modal functionality
+        document.getElementById('modalClose').addEventListener('click', function() {
+            document.getElementById('bookModal').style.display = 'none';
+        });
+
+        document.getElementById('bookModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Mobile navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // Initial render
+            renderBooks();
+        });
+    </script>
+</body>
+</html>
