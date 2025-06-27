@@ -728,466 +728,475 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Book data with your library
-        const books = [
-            {
-                title: "Competing in the Age of AI",
-                author: "Marco Iansiti",
-                category: "business",
-                description: "How AI is transforming business strategy and creating new competitive advantages in the digital economy."
-            },
-            {
-                title: "Traction",
-                author: "Gino Wickman",
-                category: "business",
-                description: "Get a grip on your business with the Entrepreneurial Operating System (EOS) for running and growing your company."
-            },
-            {
-                title: "The Secrets to Closing the Sale",
-                author: "Zig Ziglar",
-                category: "sales",
-                description: "Master the art of selling with proven techniques from one of America's greatest sales trainers."
-            },
-            {
-                title: "EOS Life",
-                author: "Gino Wickman",
-                category: "personal",
-                description: "How to live your ideal life by designing and implementing your personal operating system."
-            },
-            {
-                title: "What the Heck is EOS?",
-                author: "Gino Wickman",
-                category: "business",
-                description: "A complete guide for employees on understanding and implementing the Entrepreneurial Operating System."
-            },
-            {
-                title: "The Master and His Emissary",
-                author: "Iain McGilchrist",
-                category: "psychology",
-                description: "A groundbreaking exploration of how the brain's hemispheres shape our world and consciousness."
-            },
-            {
-                title: "Trillion Dollar Coach",
-                author: "Eric Schmidt",
-                category: "leadership",
-                description: "The leadership playbook of Bill Campbell, who helped build several of the world's most successful companies."
-            },
-            {
-                title: "The Leveling",
-                author: "Michael O'Sullivan",
-                category: "strategy",
-                description: "What's next after globalization and how nations, regions, and communities can thrive in a post-global world."
-            },
-            {
-                title: "Shut the Hell Up and Sell",
-                author: "Ronnell Richards",
-                category: "sales",
-                description: "A no-nonsense approach to sales that focuses on results over relationship-building techniques."
-            },
-            {
-                title: "Blitzscaling",
-                author: "Reid Hoffman",
-                category: "business",
-                description: "The lightning-fast path to building massively valuable companies in the startup ecosystem."
-            },
-            {
-                title: "The ONE Thing",
-                author: "Gary Keller",
-                category: "personal",
-                description: "The surprisingly simple truth behind extraordinary results through focused effort and priority."
-            },
-            {
-                title: "Leadership: Six Studies in World Strategy",
-                author: "Henry Kissinger",
-                category: "leadership",
-                description: "Lessons in statecraft from six leaders who shaped the modern world through vision and strategy."
-            },
-            {
-                title: "How Google Works",
-                author: "Eric Schmidt",
-                category: "business",
-                description: "Inside look at Google's unique culture, management principles, and innovation strategies."
-            },
-            {
-                title: "The Diary of a CEO",
-                author: "Steven Bartlett",
-                category: "leadership",
-                description: "33 laws for leadership and life from a young entrepreneur's journey building a global business."
-            },
-            {
-                title: "Getting to Yes",
-                author: "Roger Fisher",
-                category: "sales",
-                description: "The art of negotiating agreements without giving in, based on the Harvard Negotiation Project."
-            },
-            {
-                title: "Super Communicators",
-                author: "Charles Duhigg",
-                category: "personal",
-                description: "How to unlock the secret language of connection and persuade anyone of anything."
-            },
-            {
-                title: "Same as Ever",
-                author: "Morgan Housel",
-                category: "psychology",
-                description: "A guide to what never changes in a world that's constantly changing, focusing on human behavior."
-            },
-            {
-                title: "The Psychology of Money",
-                author: "Morgan Housel",
-                category: "psychology",
-                description: "Timeless lessons on wealth, greed, and happiness that reveal how people think about money."
-            },
-            {
-                title: "Make Your Bed",
-                author: "Admiral William H. McRaven",
-                category: "personal",
-                description: "Little things that can change your life and maybe the world, based on Navy SEAL training principles."
-            },
-            {
-                title: "Meditations",
-                author: "Marcus Aurelius",
-                category: "personal",
-                description: "Timeless Stoic philosophy and personal reflections from the Roman Emperor on life and leadership."
-            },
-            {
-                title: "Blue Ocean Strategy",
-                author: "W. Chan Kim",
-                category: "strategy",
-                description: "How to create uncontested market space and make competition irrelevant through innovation."
-            },
-            {
-                title: "Principles",
-                author: "Ray Dalio",
-                category: "leadership",
-                description: "Life and work principles from the founder of Bridgewater Associates, the world's largest hedge fund."
-            },
-            {
-                title: "The Five Dysfunctions of a Team",
-                author: "Patrick Lencioni",
-                category: "leadership",
-                description: "A leadership fable about how teams can overcome the most common obstacles to teamwork."
-            },
-            {
-                title: "Principles for Navigating Big Debt Crises",
-                author: "Ray Dalio",
-                category: "strategy",
-                description: "How debt crises work and how to navigate them, based on analysis of 48 historical cases."
-            },
-            {
-                title: "Your Next Five Moves",
-                author: "Patrick Bet-David",
-                category: "strategy",
-                description: "Master the art of business strategy by thinking like a chess grandmaster in entrepreneurship."
-            },
-            {
-                title: "The Data Detective",
-                author: "Tim Harford",
-                category: "business",
-                description: "Ten easy rules for making sense of statistics and data in our increasingly complex world."
-            },
-            {
-                title: "When: The Scientific Secrets of Perfect Timing",
-                author: "Daniel H. Pink",
-                category: "personal",
-                description: "The science of timing and how to make better decisions about when to act in life and work."
-            },
-            {
-                title: "See You at the Top",
-                author: "Zig Ziglar",
-                category: "personal",
-                description: "Classic motivational guide to achieving success through positive thinking and goal setting."
-            },
-            {
-                title: "Goals!",
-                author: "Zig Ziglar",
-                category: "personal",
-                description: "How to get everything you want faster than you ever thought possible through effective goal setting."
-            },
-            {
-                title: "The Goal",
-                author: "Eliyahu M. Goldratt",
-                category: "business",
-                description: "A process of ongoing improvement told through the story of a plant manager saving his factory."
-            },
-            {
-                title: "Talking to Strangers",
-                author: "Malcolm Gladwell",
-                category: "psychology",
-                description: "What we should know about the people we don't know and why we're so bad at reading them."
-            },
-            {
-                title: "The Transparency Sale",
-                author: "Todd Caponi",
-                category: "sales",
-                description: "How unexpected honesty and understanding the buying brain can transform your results."
-            },
-            {
-                title: "How to Win Friends and Influence People",
-                author: "Dale Carnegie",
-                category: "personal",
-                description: "Timeless advice on building relationships and influencing others through genuine interest and empathy."
-            },
-            {
-                title: "Smart People Should Build Things",
-                author: "Andrew Yang",
-                category: "business",
-                description: "How to restore our culture of achievement, build a path for entrepreneurs, and create new jobs."
-            },
-            {
-                title: "The Third Wave",
-                author: "Steve Case",
-                category: "business",
-                description: "An entrepreneur's vision of the future where technology integrates seamlessly into every aspect of life."
-            },
-            {
-                title: "The Hard Thing About Hard Things",
-                author: "Ben Horowitz",
-                category: "leadership",
-                description: "Building a business when there are no easy answers - practical wisdom for startup leaders."
-            }
-        ];
+<script>
+    // Book data with your library
+    const books = [
+        {
+            title: "Competing in the Age of AI",
+            author: "Marco Iansiti",
+            category: "business",
+            description: "How AI is transforming business strategy and creating new competitive advantages in the digital economy."
+        },
+        {
+            title: "Traction",
+            author: "Gino Wickman",
+            category: "business",
+            description: "Get a grip on your business with the Entrepreneurial Operating System (EOS) for running and growing your company."
+        },
+        {
+            title: "The Secrets to Closing the Sale",
+            author: "Zig Ziglar",
+            category: "sales",
+            description: "Master the art of selling with proven techniques from one of America's greatest sales trainers."
+        },
+        {
+            title: "EOS Life",
+            author: "Gino Wickman",
+            category: "personal",
+            description: "How to live your ideal life by designing and implementing your personal operating system."
+        },
+        {
+            title: "What the Heck is EOS?",
+            author: "Gino Wickman",
+            category: "business",
+            description: "A complete guide for employees on understanding and implementing the Entrepreneurial Operating System."
+        },
+        {
+            title: "The Master and His Emissary",
+            author: "Iain McGilchrist",
+            category: "psychology",
+            description: "A groundbreaking exploration of how the brain's hemispheres shape our world and consciousness."
+        },
+        {
+            title: "Trillion Dollar Coach",
+            author: "Eric Schmidt",
+            category: "leadership",
+            description: "The leadership playbook of Bill Campbell, who helped build several of the world's most successful companies."
+        },
+        {
+            title: "The Leveling",
+            author: "Michael O'Sullivan",
+            category: "strategy",
+            description: "What's next after globalization and how nations, regions, and communities can thrive in a post-global world."
+        },
+        {
+            title: "Shut the Hell Up and Sell",
+            author: "Ronnell Richards",
+            category: "sales",
+            description: "A no-nonsense approach to sales that focuses on results over relationship-building techniques."
+        },
+        {
+            title: "Blitzscaling",
+            author: "Reid Hoffman",
+            category: "business",
+            description: "The lightning-fast path to building massively valuable companies in the startup ecosystem."
+        },
+        {
+            title: "The ONE Thing",
+            author: "Gary Keller",
+            category: "personal",
+            description: "The surprisingly simple truth behind extraordinary results through focused effort and priority."
+        },
+        {
+            title: "Leadership: Six Studies in World Strategy",
+            author: "Henry Kissinger",
+            category: "leadership",
+            description: "Lessons in statecraft from six leaders who shaped the modern world through vision and strategy."
+        },
+        {
+            title: "How Google Works",
+            author: "Eric Schmidt",
+            category: "business",
+            description: "Inside look at Google's unique culture, management principles, and innovation strategies."
+        },
+        {
+            title: "The Diary of a CEO",
+            author: "Steven Bartlett",
+            category: "leadership",
+            description: "33 laws for leadership and life from a young entrepreneur's journey building a global business."
+        },
+        {
+            title: "Getting to Yes",
+            author: "Roger Fisher",
+            category: "sales",
+            description: "The art of negotiating agreements without giving in, based on the Harvard Negotiation Project."
+        },
+        {
+            title: "Super Communicators",
+            author: "Charles Duhigg",
+            category: "personal",
+            description: "How to unlock the secret language of connection and persuade anyone of anything."
+        },
+        {
+            title: "Same as Ever",
+            author: "Morgan Housel",
+            category: "psychology",
+            description: "A guide to what never changes in a world that's constantly changing, focusing on human behavior."
+        },
+        {
+            title: "The Psychology of Money",
+            author: "Morgan Housel",
+            category: "psychology",
+            description: "Timeless lessons on wealth, greed, and happiness that reveal how people think about money."
+        },
+        {
+            title: "Make Your Bed",
+            author: "Admiral William H. McRaven",
+            category: "personal",
+            description: "Little things that can change your life and maybe the world, based on Navy SEAL training principles."
+        },
+        {
+            title: "Meditations",
+            author: "Marcus Aurelius",
+            category: "personal",
+            description: "Timeless Stoic philosophy and personal reflections from the Roman Emperor on life and leadership."
+        },
+        {
+            title: "Blue Ocean Strategy",
+            author: "W. Chan Kim",
+            category: "strategy",
+            description: "How to create uncontested market space and make competition irrelevant through innovation."
+        },
+        {
+            title: "Principles",
+            author: "Ray Dalio",
+            category: "leadership",
+            description: "Life and work principles from the founder of Bridgewater Associates, the world's largest hedge fund."
+        },
+        {
+            title: "The Five Dysfunctions of a Team",
+            author: "Patrick Lencioni",
+            category: "leadership",
+            description: "A leadership fable about how teams can overcome the most common obstacles to teamwork."
+        },
+        {
+            title: "Principles for Navigating Big Debt Crises",
+            author: "Ray Dalio",
+            category: "strategy",
+            description: "How debt crises work and how to navigate them, based on analysis of 48 historical cases."
+        },
+        {
+            title: "Your Next Five Moves",
+            author: "Patrick Bet-David",
+            category: "strategy",
+            description: "Master the art of business strategy by thinking like a chess grandmaster in entrepreneurship."
+        },
+        {
+            title: "The Data Detective",
+            author: "Tim Harford",
+            category: "business",
+            description: "Ten easy rules for making sense of statistics and data in our increasingly complex world."
+        },
+        {
+            title: "When: The Scientific Secrets of Perfect Timing",
+            author: "Daniel H. Pink",
+            category: "personal",
+            description: "The science of timing and how to make better decisions about when to act in life and work."
+        },
+        {
+            title: "See You at the Top",
+            author: "Zig Ziglar",
+            category: "personal",
+            description: "Classic motivational guide to achieving success through positive thinking and goal setting."
+        },
+        {
+            title: "Goals!",
+            author: "Zig Ziglar",
+            category: "personal",
+            description: "How to get everything you want faster than you ever thought possible through effective goal setting."
+        },
+        {
+            title: "The Goal",
+            author: "Eliyahu M. Goldratt",
+            category: "business",
+            description: "A process of ongoing improvement told through the story of a plant manager saving his factory."
+        },
+        {
+            title: "Talking to Strangers",
+            author: "Malcolm Gladwell",
+            category: "psychology",
+            description: "What we should know about the people we don't know and why we're so bad at reading them."
+        },
+        {
+            title: "The Transparency Sale",
+            author: "Todd Caponi",
+            category: "sales",
+            description: "How unexpected honesty and understanding the buying brain can transform your results."
+        },
+        {
+            title: "How to Win Friends and Influence People",
+            author: "Dale Carnegie",
+            category: "personal",
+            description: "Timeless advice on building relationships and influencing others through genuine interest and empathy."
+        },
+        {
+            title: "Smart People Should Build Things",
+            author: "Andrew Yang",
+            category: "business",
+            description: "How to restore our culture of achievement, build a path for entrepreneurs, and create new jobs."
+        },
+        {
+            title: "The Third Wave",
+            author: "Steve Case",
+            category: "business",
+            description: "An entrepreneur's vision of the future where technology integrates seamlessly into every aspect of life."
+        },
+        {
+            title: "The Hard Thing About Hard Things",
+            author: "Ben Horowitz",
+            category: "leadership",
+            description: "Building a business when there are no easy answers - practical wisdom for startup leaders."
+        }
+    ];
 
-        // Cache for book covers to avoid repeated API calls
-        const coverCache = new Map();
+    // Cache for book covers to avoid repeated API calls
+    const coverCache = new Map();
 
-        // Function to get book cover from Google Books API
-        async function getBookCoverFromGoogle(title, author) {
-            const cacheKey = `${title}-${author}`;
-            
-            // Check cache first
-            if (coverCache.has(cacheKey)) {
-                return coverCache.get(cacheKey);
-            }
-
-            try {
-                // Construct Google Books API query
-                const query = `intitle:"${title}"+inauthor:"${author}"`;
-                const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=1`;
-                
-                console.log(`Fetching cover for: ${title} by ${author}`);
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                
-                if (data.items && data.items.length > 0) {
-                    const book = data.items[0];
-                    const imageLinks = book.volumeInfo.imageLinks;
-                    
-                    if (imageLinks) {
-                        // Prefer thumbnail over smallThumbnail, and use HTTPS
-                        let coverUrl = imageLinks.thumbnail || imageLinks.smallThumbnail;
-                        if (coverUrl) {
-                            coverUrl = coverUrl.replace('http://', 'https://');
-                            coverCache.set(cacheKey, coverUrl);
-                            console.log(`✓ Found cover for: ${title}`);
-                            return coverUrl;
-                        }
-                    }
-                }
-                console.log(`✗ No cover found for: ${title}`);
-            } catch (error) {
-                console.warn(`Could not fetch cover for "${title}" by ${author}:`, error);
-            }
-            
-            // Fallback to placeholder
-            const fallbackUrl = `https://via.placeholder.com/120x180/243551/FFFFFF?text=${encodeURIComponent(title.substring(0, 15))}`;
-            coverCache.set(cacheKey, fallbackUrl);
-            return fallbackUrl;
+    // Function to get book cover from Google Books API
+    async function getBookCoverFromGoogle(title, author) {
+        const cacheKey = `${title}-${author}`;
+        
+        // Check cache first
+        if (coverCache.has(cacheKey)) {
+            return coverCache.get(cacheKey);
         }
 
-        // Function to generate Amazon search link
-        function getAmazonLink(title, author) {
+        try {
+            // Construct Google Books API query
+            const query = `intitle:"${title}"+inauthor:"${author}"`;
+            const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=1`;
+            
+            console.log(`Fetching cover for: ${title} by ${author}`);
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            
+            if (data.items && data.items.length > 0) {
+                const book = data.items[0];
+                const imageLinks = book.volumeInfo.imageLinks;
+                
+                if (imageLinks) {
+                    // Prefer thumbnail over smallThumbnail, and use HTTPS
+                    let coverUrl = imageLinks.thumbnail || imageLinks.smallThumbnail;
+                    if (coverUrl) {
+                        coverUrl = coverUrl.replace('http://', 'https://');
+                        coverCache.set(cacheKey, coverUrl);
+                        console.log(`✓ Found cover for: ${title}`);
+                        return coverUrl;
+                    }
+                }
+            }
+            console.log(`✗ No cover found for: ${title}`);
+        } catch (error) {
+            console.warn(`Could not fetch cover for "${title}" by ${author}:`, error);
+        }
+        
+        // Fallback to placeholder
+        const fallbackUrl = `https://via.placeholder.com/120x180/243551/FFFFFF?text=${encodeURIComponent(title.substring(0, 15))}`;
+        coverCache.set(cacheKey, fallbackUrl);
+        return fallbackUrl;
+    }
+
+    // Function to generate Amazon affiliate link with your affiliate tag
+    function getAmazonLink(title, author) {
+        // Specific ASINs for books you have direct affiliate links for
+        const specificASINs = {
+            "Traction": "1936661845",
+            // Add more ASINs here as you get specific affiliate links for other books
+        };
+        
+        const affiliateTag = "intagonizer-20";
+        
+        if (specificASINs[title]) {
+            // Use direct product link if ASIN is available
+            return `https://www.amazon.com/dp/${specificASINs[title]}?tag=${affiliateTag}&linkCode=ll1&ref_=as_li_ss_tl`;
+        } else {
+            // Fall back to search link with affiliate tag
             const searchQuery = `${title} ${author}`.replace(/[^a-zA-Z0-9\s]/g, '');
             const encodedQuery = encodeURIComponent(searchQuery);
-            
-            // Basic Amazon search URL (you can add your affiliate tag if you have one)
-            return `https://www.amazon.com/s?k=${encodedQuery}&ref=sr_pg_1`;
-            
-            // If you have Amazon Associates account, use this format instead:
-            // return `https://www.amazon.com/s?k=${encodedQuery}&tag=YOURTAG&ref=sr_pg_1`;
+            return `https://www.amazon.com/s?k=${encodedQuery}&tag=${affiliateTag}&linkCode=ll1&ref_=as_li_ss_tl`;
         }
+    }
 
-        // Function to render books with real covers
-        async function renderBooks(booksToRender = books) {
-            console.log('Starting to render books...');
-            
-            // Clear all shelves
-            const shelves = ['businessBooks', 'leadershipBooks', 'salesBooks', 'personalBooks'];
-            shelves.forEach(shelfId => {
-                const shelf = document.getElementById(shelfId);
-                if (shelf) shelf.innerHTML = '';
-            });
-
-            // Render books with covers
-            for (const book of booksToRender) {
-                const bookElement = document.createElement('div');
-                bookElement.className = 'book';
-                
-                // Start with placeholder while loading
-                bookElement.innerHTML = `
-                    <img class="book-cover" src="https://via.placeholder.com/120x180/243551/FFFFFF?text=Loading..." alt="${book.title}">
-                    <div class="book-info">
-                        <div class="book-title">${book.title}</div>
-                        <div class="book-author">${book.author}</div>
-                    </div>
-                `;
-                
-                // Add to appropriate shelf immediately
-                const targetShelf = getTargetShelf(book.category);
-                if (targetShelf) {
-                    targetShelf.appendChild(bookElement);
-                }
-                
-                // Fetch real cover and update (async)
-                getBookCoverFromGoogle(book.title, book.author).then(coverUrl => {
-                    const img = bookElement.querySelector('.book-cover');
-                    if (img) {
-                        img.src = coverUrl;
-                        img.onerror = function() {
-                            this.src = 'https://via.placeholder.com/120x180/243551/FFFFFF?text=Book';
-                        };
-                    }
-                });
-                
-                // Add click event for modal
-                const amazonLink = getAmazonLink(book.title, book.author);
-                bookElement.addEventListener('click', () => {
-                    const currentCover = bookElement.querySelector('.book-cover').src;
-                    openBookModal(book, currentCover, amazonLink);
-                });
-            }
-        }
-
-        // Function to determine target shelf
-        function getTargetShelf(category) {
-            switch(category) {
-                case 'business':
-                case 'strategy':
-                    return document.getElementById('businessBooks');
-                case 'leadership':
-                    return document.getElementById('leadershipBooks');
-                case 'sales':
-                    return document.getElementById('salesBooks');
-                case 'personal':
-                case 'psychology':
-                    return document.getElementById('personalBooks');
-                default:
-                    return document.getElementById('businessBooks');
-            }
-        }
-
-        // Updated function to open book modal with Amazon link
-        function openBookModal(book, coverUrl, amazonLink) {
-            document.getElementById('modalCover').src = coverUrl;
-            document.getElementById('modalTitle').textContent = book.title;
-            document.getElementById('modalAuthor').textContent = `by ${book.author}`;
-            document.getElementById('modalDescription').textContent = book.description;
-            
-            // Add or update Amazon link
-            let amazonBtn = document.getElementById('amazonLink');
-            if (!amazonBtn) {
-                amazonBtn = document.createElement('a');
-                amazonBtn.id = 'amazonLink';
-                amazonBtn.textContent = 'Buy on Amazon';
-                amazonBtn.style.cssText = `
-                    display: inline-block;
-                    margin-top: 1rem;
-                    padding: 10px 20px;
-                    background-color: #243551;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    font-weight: 500;
-                    transition: background-color 0.3s ease;
-                `;
-                amazonBtn.addEventListener('mouseenter', () => {
-                    amazonBtn.style.backgroundColor = '#992448';
-                });
-                amazonBtn.addEventListener('mouseleave', () => {
-                    amazonBtn.style.backgroundColor = '#243551';
-                });
-                
-                // Add the button to modal content
-                document.querySelector('.modal-content').appendChild(amazonBtn);
-            }
-            
-            amazonBtn.href = amazonLink;
-            amazonBtn.target = '_blank';
-            amazonBtn.rel = 'noopener noreferrer';
-            
-            document.getElementById('bookModal').style.display = 'flex';
-        }
-
-        // Update currently reading section with real cover
-        async function updateCurrentlyReading() {
-            console.log('Updating currently reading cover...');
-            const currentlyReadingCover = document.querySelector('.currently-reading-cover');
-            if (currentlyReadingCover) {
-                const coverUrl = await getBookCoverFromGoogle("Competing in the Age of AI", "Marco Iansiti");
-                currentlyReadingCover.src = coverUrl;
-                currentlyReadingCover.onerror = function() {
-                    this.src = 'https://via.placeholder.com/150x225/243551/FFFFFF?text=Book';
-                };
-            }
-        }
-
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredBooks = books.filter(book =>
-                book.title.toLowerCase().includes(searchTerm) ||
-                book.author.toLowerCase().includes(searchTerm)
-            );
-            renderBooks(filteredBooks);
+    // Function to render books with real covers
+    async function renderBooks(booksToRender = books) {
+        console.log('Starting to render books...');
+        
+        // Clear all shelves
+        const shelves = ['businessBooks', 'leadershipBooks', 'salesBooks', 'personalBooks'];
+        shelves.forEach(shelfId => {
+            const shelf = document.getElementById(shelfId);
+            if (shelf) shelf.innerHTML = '';
         });
 
-        // Filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Update active button
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filter books
-                const category = this.getAttribute('data-category');
-                if (category === 'all') {
-                    renderBooks(books);
-                } else {
-                    const filteredBooks = books.filter(book => book.category === category);
-                    renderBooks(filteredBooks);
+        // Render books with covers
+        for (const book of booksToRender) {
+            const bookElement = document.createElement('div');
+            bookElement.className = 'book';
+            
+            // Start with placeholder while loading
+            bookElement.innerHTML = `
+                <img class="book-cover" src="https://via.placeholder.com/120x180/243551/FFFFFF?text=Loading..." alt="${book.title}">
+                <div class="book-info">
+                    <div class="book-title">${book.title}</div>
+                    <div class="book-author">${book.author}</div>
+                </div>
+            `;
+            
+            // Add to appropriate shelf immediately
+            const targetShelf = getTargetShelf(book.category);
+            if (targetShelf) {
+                targetShelf.appendChild(bookElement);
+            }
+            
+            // Fetch real cover and update (async)
+            getBookCoverFromGoogle(book.title, book.author).then(coverUrl => {
+                const img = bookElement.querySelector('.book-cover');
+                if (img) {
+                    img.src = coverUrl;
+                    img.onerror = function() {
+                        this.src = 'https://via.placeholder.com/120x180/243551/FFFFFF?text=Book';
+                    };
                 }
             });
-        });
-
-        // Modal functionality
-        document.getElementById('modalClose').addEventListener('click', function() {
-            document.getElementById('bookModal').style.display = 'none';
-        });
-
-        document.getElementById('bookModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
-
-        // Mobile navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
             
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                });
-            }
+            // Add click event for modal
+            const amazonLink = getAmazonLink(book.title, book.author);
+            bookElement.addEventListener('click', () => {
+                const currentCover = bookElement.querySelector('.book-cover').src;
+                openBookModal(book, currentCover, amazonLink);
+            });
+        }
+    }
 
-            console.log('Page loaded, starting book rendering...');
-            // Initial render and update currently reading
-            renderBooks();
-            updateCurrentlyReading();
+    // Function to determine target shelf
+    function getTargetShelf(category) {
+        switch(category) {
+            case 'business':
+            case 'strategy':
+                return document.getElementById('businessBooks');
+            case 'leadership':
+                return document.getElementById('leadershipBooks');
+            case 'sales':
+                return document.getElementById('salesBooks');
+            case 'personal':
+            case 'psychology':
+                return document.getElementById('personalBooks');
+            default:
+                return document.getElementById('businessBooks');
+        }
+    }
+
+    // Updated function to open book modal with Amazon link
+    function openBookModal(book, coverUrl, amazonLink) {
+        document.getElementById('modalCover').src = coverUrl;
+        document.getElementById('modalTitle').textContent = book.title;
+        document.getElementById('modalAuthor').textContent = `by ${book.author}`;
+        document.getElementById('modalDescription').textContent = book.description;
+        
+        // Add or update Amazon link
+        let amazonBtn = document.getElementById('amazonLink');
+        if (!amazonBtn) {
+            amazonBtn = document.createElement('a');
+            amazonBtn.id = 'amazonLink';
+            amazonBtn.textContent = 'Buy on Amazon';
+            amazonBtn.style.cssText = `
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 10px 20px;
+                background-color: #243551;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 500;
+                transition: background-color 0.3s ease;
+            `;
+            amazonBtn.addEventListener('mouseenter', () => {
+                amazonBtn.style.backgroundColor = '#992448';
+            });
+            amazonBtn.addEventListener('mouseleave', () => {
+                amazonBtn.style.backgroundColor = '#243551';
+            });
+            
+            // Add the button to modal content
+            document.querySelector('.modal-content').appendChild(amazonBtn);
+        }
+        
+        amazonBtn.href = amazonLink;
+        amazonBtn.target = '_blank';
+        amazonBtn.rel = 'noopener noreferrer';
+        
+        document.getElementById('bookModal').style.display = 'flex';
+    }
+
+    // Update currently reading section with real cover
+    async function updateCurrentlyReading() {
+        console.log('Updating currently reading cover...');
+        const currentlyReadingCover = document.querySelector('.currently-reading-cover');
+        if (currentlyReadingCover) {
+            const coverUrl = await getBookCoverFromGoogle("Competing in the Age of AI", "Marco Iansiti");
+            currentlyReadingCover.src = coverUrl;
+            currentlyReadingCover.onerror = function() {
+                this.src = 'https://via.placeholder.com/150x225/243551/FFFFFF?text=Book';
+            };
+        }
+    }
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredBooks = books.filter(book =>
+            book.title.toLowerCase().includes(searchTerm) ||
+            book.author.toLowerCase().includes(searchTerm)
+        );
+        renderBooks(filteredBooks);
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter books
+            const category = this.getAttribute('data-category');
+            if (category === 'all') {
+                renderBooks(books);
+            } else {
+                const filteredBooks = books.filter(book => book.category === category);
+                renderBooks(filteredBooks);
+            }
         });
-    </script>
+    });
+
+    // Modal functionality
+    document.getElementById('modalClose').addEventListener('click', function() {
+        document.getElementById('bookModal').style.display = 'none';
+    });
+
+    document.getElementById('bookModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+    // Mobile navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        console.log('Page loaded, starting book rendering...');
+        // Initial render and update currently reading
+        renderBooks();
+        updateCurrentlyReading();
+    });
+</script>
 </body>
 </html>
