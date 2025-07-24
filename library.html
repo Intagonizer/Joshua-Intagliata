@@ -941,10 +941,22 @@
             }
         ];
 
-        // Function to generate book cover filename from title
+        // Function to generate book cover filename from title with specific overrides
         function getBookCoverUrl(title) {
-            // First letter capitalized, rest lowercase, spaces kept
+            // Specific filename overrides for books that don't follow the standard pattern
+            const specificFilenames = {
+                "Supercommunicators": "Supercommunicators.jpg"
+            };
+            
+            // Check if we have a specific filename override
+            if (specificFilenames[title]) {
+                console.log(`Using specific filename for ${title}: ${specificFilenames[title]}`);
+                return `images/${specificFilenames[title]}`;
+            }
+            
+            // Default pattern: First letter capitalized, rest lowercase, spaces kept
             const filename = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() + '.jpg';
+            console.log(`Generated filename for ${title}: ${filename}`);
             return `images/${filename}`;
         }
 
@@ -955,9 +967,7 @@
                 "Traction": "1936661845",
                 // Add more ASINs here as you get specific affiliate links for other books
             };
-            
             const affiliateTag = "intagonizer-20";
-            
             if (specificASINs[title]) {
                 // Use direct product link if ASIN is available
                 return `https://www.amazon.com/dp/${specificASINs[title]}?tag=${affiliateTag}&linkCode=ll1&ref_=as_li_ss_tl`;
